@@ -7,7 +7,7 @@
     "prepare": "husky install",
     "cz": "git-cz",
     "serve": "nodemon src/app.ts",
-    "test": "mocha"
+    "test": "mocha --require ts-node/register src/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,11 @@
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
+    "@types/chai": "^4.3.1",
     "@types/express": "^4.17.13",
+    "@types/mocha": "^9.1.1",
     "@types/node": "^17.0.26",
+    "@types/sinon": "^10.0.11",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "chai": "^4.3.6",
