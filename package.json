@@ -2,10 +2,11 @@
   "name": "express-rest-quickstart",
   "version": "0.0.0",
   "description": "quickstart for express rest apis using typescript",
-  "main": "index.ts",
+  "main": "src/app.ts",
   "scripts": {
     "prepare": "husky install",
     "cz": "git-cz",
+    "serve": "nodemon src/app.ts",
     "test": "mocha"
   },
   "repository": {
@@ -15,11 +16,13 @@
   "author": "Francisco Llamosas Baptista",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.17.3",
     "yarn": "^1.22.18"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
+    "@types/express": "^4.17.13",
     "@types/node": "^17.0.26",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "3.3.0",
