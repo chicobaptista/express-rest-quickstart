@@ -23,6 +23,6 @@ jobs:
             - name: Install dependencies
               run: npx yarn install --pure-lockfile
             - name: Run unit tests
-              run: npm test:unit
+              run: npm run test:unit
             - name: Run e2e tests
-              run: npm test:e2e:mocha
+              run: npm run test:e2e:mocha
