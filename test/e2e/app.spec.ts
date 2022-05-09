@@ -6,9 +6,9 @@ import chaiHttp = require('chai-http')
 chai.use(chaiHttp)
 
 describe('Root route', () => {
-    it('should return the msg query param on response body', async () => {
-        const testQuery = { msg: 'testMsg' }
-        const res = await chai.request(app).get('/').query(testQuery)
-        expect(res.body.msg).to.include(testQuery.msg)
+    it(`should return the msg param`, async () => {
+        const testBody = { msg: 'testMsg' }
+        const res = await chai.request(app).post('/msg').send(testBody)
+        expect(res.body.msg).to.include(testBody.msg)
     })
 })
