@@ -1,7 +1,9 @@
 import { InferType, object, string } from 'yup'
 
-export const msgRequestSchema = object({
-    msg: string().required(),
+export const createMsgReqSchema = object({
+    body: object({
+        msg: string().required(),
+    }),
 })
 
-export interface MsgRequest extends InferType<typeof msgRequestSchema> {}
+export interface MsgRequest extends InferType<typeof createMsgReqSchema> {}
