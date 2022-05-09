@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { Router } from 'express'
 import { Routes } from './routes.enum'
 import { createMsgReqSchema } from '../msg/msg.schema'
