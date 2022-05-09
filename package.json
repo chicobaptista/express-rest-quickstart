@@ -7,7 +7,7 @@
     "prepare": "husky install",
     "cz": "git-cz",
     "serve": "nodemon src/app.ts",
-    "test:unit": "mocha --require ts-node/register src/**/*.spec.ts",
+    "test:unit": "nyc --reporter=text mocha --require ts-node/register src/**/*.spec.ts",
     "test:e2e:newman": "newman run test/e2e/Quiskstart-API.postman_collection.json",
     "test:e2e:mocha": "mocha --require ts-node/register test/e2e/*.spec.ts --exit"
   },
