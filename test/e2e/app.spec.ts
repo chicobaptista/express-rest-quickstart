@@ -18,7 +18,8 @@ describe('API', () => {
                         .request(app)
                         .post(ROUTE)
                         .send(testBody)
-                    expect(res.body.msg).to.include(testBody.msg)
+                    expect(res.status).to.equal(201, 'status should be CREATED')
+                    expect(res.body.msg).to.equal(testBody.msg)
                 })
             })
             describe('on an invalid payload', () => {
