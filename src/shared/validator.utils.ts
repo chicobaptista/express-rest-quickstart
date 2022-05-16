@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
 import { AnySchema } from 'yup'
+import { PayloadValidationError } from './errors/payloadValidation.error'
 
 export const validate =
     (schema: AnySchema) =>
@@ -20,8 +21,9 @@ export const validate =
             Object.assign(req, { ...validated })
             return next()
         } catch (err) {
+            const error = new PayloadValidationError(err.errors.join(', '))
             return res
-                .status(400)
-                .json({ type: err.name, message: err.errors.join(', ') })
+                .status(error.status)
+                .json({ type: error.name, message: error.message })
         }
     }
