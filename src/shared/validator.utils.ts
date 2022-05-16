@@ -22,8 +22,6 @@ export const validate =
             return next()
         } catch (err) {
             const error = new PayloadValidationError(err.errors.join(', '))
-            return res
-                .status(error.status)
-                .json({ type: error.name, message: error.message })
+            return next(error)
         }
     }
