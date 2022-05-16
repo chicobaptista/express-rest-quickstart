@@ -33,8 +33,8 @@ describe('API', () => {
                     const { body } = res
                     expect(
                         body.type,
-                        'Error type should be ValidationError',
-                    ).to.equal('ValidationError')
+                        'Error type should be PayloadValidationError',
+                    ).to.equal('PayloadValidationError')
                     expect(
                         body.message,
                         'Error message should say msg is a required field',
