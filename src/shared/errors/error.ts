@@ -2,6 +2,7 @@ export class ApiError extends Error {
     name: string
     message: string
     status: number
+    /* istanbul ignore next */
     constructor(
         message: string = 'Something went wrong. Please try again.',
         status: number = 500,
