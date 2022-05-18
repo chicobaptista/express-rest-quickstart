@@ -1,11 +1,12 @@
 /* istanbul ignore file */
+import { appConfig } from './shared/config'
 import { errorLoggerMiddleware } from './shared/errors/errorLogger.middleware'
 import { errorParserMiddleware } from './shared/errors/errorParser.middleware'
 import express from 'express'
 import router from './routes/routes'
 
 const app = express()
-const port = 3000
+const port = appConfig.PORT
 
 app.use(express.json())
 app.use(router)
