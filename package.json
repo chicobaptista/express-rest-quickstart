@@ -7,7 +7,7 @@
     "prepare": "husky install",
     "cz": "git-cz",
     "serve": "LOG_ERRORS=true nodemon src/app.ts",
-    "test:file":  "mocha --require ts-node/register",
+    "test:file": "mocha --require ts-node/register",
     "test:unit": "nyc --reporter=text mocha --require ts-node/register --recursive './src/**/*.spec.ts'",
     "test:e2e:newman": "newman run test/e2e/Quiskstart-API.postman_collection.json",
     "test:e2e:mocha": "mocha --require ts-node/register --recursive 'test/e2e/*.spec.ts' --exit"
@@ -19,6 +19,8 @@
   "author": "Francisco Llamosas Baptista",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.0.1",
+    "env-var": "^7.1.1",
     "express": "^4.17.3",
     "yarn": "^1.22.18",
     "yup": "^0.32.11"
