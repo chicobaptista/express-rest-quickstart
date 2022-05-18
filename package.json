@@ -9,7 +9,7 @@
     "serve": "LOG_ERRORS=true nodemon src/app.ts",
     "test:file": "mocha --require ts-node/register",
     "test:unit": "nyc --reporter=text mocha --require ts-node/register --recursive './src/**/*.spec.ts'",
-    "test:e2e:newman": "newman run test/e2e/Quiskstart-API.postman_collection.json",
+    "test:e2e:newman": "newman run test/e2e/Quiskstart-API.postman_collection.json -e test/e2e/quickstart-API-local.postman_environment.json",
     "test:e2e:mocha": "mocha --require ts-node/register --recursive 'test/e2e/*.spec.ts' --exit"
   },
   "repository": {

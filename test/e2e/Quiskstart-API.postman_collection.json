@@ -99,14 +99,12 @@
 											}
 										},
 										"url": {
-											"raw": "http://localhost:3000/msg",
-											"protocol": "http",
+											"raw": "{{baseURL}}/{{route_msg}}",
 											"host": [
-												"localhost"
+												"{{baseURL}}"
 											],
-											"port": "3000",
 											"path": [
-												"msg"
+												"{{route_msg}}"
 											]
 										}
 									},
@@ -143,6 +141,15 @@
 		{
 			"key": "test_msg",
 			"value": "test",
+			"type": "string"
+		},
+		{
+			"key": "route_msg",
+			"value": "msg",
+			"type": "string"
+		},
+		{
+			"value": "",
 			"type": "string"
 		}
 	]
