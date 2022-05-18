@@ -6,8 +6,8 @@ import {
     mockRequest,
     mockResponse,
 } from '../__mocks__/express.controller'
-import { ApiError } from './error'
-import { PayloadValidationError } from './payloadValidation.error'
+import { ApiError } from './api-errors/apiError'
+import { PayloadValidationError } from './api-errors/payloadValidation.error'
 import chaiAsPromised from 'chai-as-promised'
 import { errorParserMiddleware } from './errorParser.middleware'
 import sinonChai from 'sinon-chai'

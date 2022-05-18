@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { NextFunction, Request, Response } from 'express'
-import { ApiError } from './error'
+import { ApiError } from './api-errors/apiError'
 
 export function errorParserMiddleware(
     error: Error,

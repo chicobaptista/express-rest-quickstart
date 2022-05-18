@@ -1,5 +1,5 @@
 import { describe, it } from 'mocha'
-import { ApiError } from './error'
+import { ApiError } from './apiError'
 import { expect } from 'chai'
 
 describe('ApiError', () => {

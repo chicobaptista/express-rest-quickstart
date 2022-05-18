@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
 import { AnySchema } from 'yup'
-import { PayloadValidationError } from './errors/payloadValidation.error'
+import { PayloadValidationError } from './errors/api-errors/payloadValidation.error'
 
 export const validate =
     (schema: AnySchema) =>
