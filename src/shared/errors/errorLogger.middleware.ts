@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 import { NextFunction, Request, Response } from 'express'
-
+import { loggerConfig } from '../config'
 export function errorLoggerMiddleware(
     error: Error,
     _req: Request,
@@ -8,6 +8,6 @@ export function errorLoggerMiddleware(
     next: NextFunction,
 ) {
     // eslint-disable-next-line no-undef
-    if (process.env.LOG_ERRORS === 'true') console.error(error)
+    if (loggerConfig.ERRORS) console.error(error)
     next(error)
 }

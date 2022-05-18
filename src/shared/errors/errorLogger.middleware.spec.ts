@@ -8,6 +8,7 @@ import {
 } from '../__mocks__/express.controller'
 import chaiAsPromised from 'chai-as-promised'
 import { errorLoggerMiddleware } from './errorLogger.middleware'
+import { loggerConfig } from '../config'
 import sinon from 'sinon'
 import sinonChai from 'sinon-chai'
 
@@ -31,7 +32,7 @@ describe('ErrorLogger middleware', () => {
     describe('on LOG_ERRORS = true', () => {
         beforeEach(() => {
             // eslint-disable-next-line no-undef
-            process.env.LOG_ERRORS = 'true'
+            loggerConfig.ERRORS = true
         })
         it('should log the error', () => {
             errorLoggerMiddleware(error, req, res, next)
@@ -41,7 +42,7 @@ describe('ErrorLogger middleware', () => {
     describe('on LOG_ERRORS = false', () => {
         beforeEach(() => {
             // eslint-disable-next-line no-undef
-            process.env.LOG_ERRORS = 'false'
+            loggerConfig.ERRORS = false
         })
         it('should NOT log the error', () => {
             errorLoggerMiddleware(error, req, res, next)
